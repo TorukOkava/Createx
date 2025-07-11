@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lecture</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet" href="../css/swiper-bundle.css" />
+
+    <link rel="stylesheet" href="//cdn.datatables.net/2.3.2/css/dataTables.dataTables.min.css">
+
+    <link rel="stylesheet" href="../src/output.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+
+
+<body>
+
+    <div class="modal-r opacity-0 pointer-events-none w-full h-full fixed left-0 top-0 flex justify-center items-center bg-[#000000c5] z-10"
+        id="myModal-r">
+        <div
+            class=" modal-r-content relative bg-white w-[490px] h-[770px] !px-12 !py-7 !pt-10 rounded-sm flex flex-col gap-5 ">
+            <span
+                class="modal-close absolute right-[20px] top-[10px] cursor-pointer lato-400 text-[#787A80] text-lg hover:text-[#FF3F3A] transition"
+                >X
+            </span>
+            <h1 class="lato-700 text-[#1E212C] text-3xl text-center">Sign in</h1>
+            <p class="lato-400 text-[#787A80] text-sm text-center">Registration takes less than a minute but gives you full control over your studying.</p>
+            <div class="flex flex-col gap-5">
+                <div class="flex flex-col gap-2">
+                    <p class="lato-400 text-[#424551] text-sm">Full Name</p>
+                    <input type="text" placeholder="Your full name"
+                        class="border border-[#D7DADD] w-full !py-2 outline-none rounded-sm !pl-3 lato-400 text-[#424551] text-sm">
+                </div>
+                <div class="flex flex-col gap-2">
+                    <p class="lato-400 text-[#424551] text-sm">Email</p>
+                    <input type="text" placeholder="Your working email"
+                        class="border border-[#D7DADD] w-full !py-2 outline-none rounded-sm !pl-3 lato-400 text-[#424551] text-sm">
+                </div>
+                <div class="flex flex-col gap-2">
+                    <p class="lato-400 text-[#424551] text-sm">Password</p>
+                    <input type="text"
+                        class="border border-[#D7DADD] w-full !py-2 outline-none rounded-sm !pl-3 lato-400 text-[#424551] text-sm">
+                </div>
+                <div class="flex flex-col gap-2">
+                    <p class="lato-400 text-[#424551] text-sm">Confirm Password</p>
+                    <input type="text"
+                        class="border border-[#D7DADD] w-full !py-2 outline-none rounded-sm !pl-3 lato-400 text-[#424551] text-sm">
+                </div>
+            </div>
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                    <input type="checkbox" name="" id="" class="outline-none hover:bg-red-50">
+                    <p class="lato-400 text-[#424551] text-sm">Remember me</p>
+                </div>
+            </div>
+            <button class="btn transition">Sign in</button>
+            <p class="lato-400 text-[#424551] text-sm">
+                Already have an account? <a href="#" class="text-[#FF3F3A]">Sign up</a>
+            </p>
+            <div class="border-t border-[#E5E8ED] !pt-7 ">
+                <p class="flex items-center flex-col text-center justify-center gap-5 lato-400 text-[#787A80] text-sm  ">
+                    Or sign in with:
+                <div class="flex gap-2 items-center justify-center !mt-5">
+                    <i class="fa-brands fa-facebook text-[#787A80] text-2xl hover:text-[#FF3F3A] transition"></i>
+                    <i class="fa-brands fa-twitter text-[#787A80] text-2xl hover:text-[#FF3F3A] transition"></i>
+                    <i class="fa-brands fa-linkedin-in text-[#787A80] text-2xl hover:text-[#FF3F3A] transition"></i>
+                </div>
+                </p>
+
+            </div>
+        </div>
+    </div>
+    <div class="modal-l opacity-0 pointer-events-none w-full h-full fixed left-0 top-0 flex justify-center items-center bg-[#000000c5] z-10"
+        id="myModal-l">
+        <div
+            class=" modal-l-content relative bg-white w-[490px] h-[650px] !px-12 !py-7 !pt-10 rounded-sm flex flex-col gap-5 ">
+            <span
+                class=" absolute right-[20px] top-[10px] cursor-pointer lato-400 text-[#787A80] text-lg hover:text-[#FF3F3A] transition"
+               id="close" >X
+            </span>
+            <h1 class="lato-700 text-[#1E212C] text-3xl text-center">Sign in</h1>
+            <p class="lato-400 text-[#787A80] text-sm text-center">Sign in to your account using email and password
+                provided during registration.</p>
+            <div class="flex flex-col gap-5">
+                <div class="flex flex-col gap-2">
+                    <p class="lato-400 text-[#424551] text-sm">Email</p>
+                    <input type="text"
+                        class="border border-[#D7DADD] w-full !py-2 outline-none rounded-sm !pl-3 lato-400 text-[#424551] text-sm">
+                </div>
+                <div class="flex flex-col gap-2">
+                    <p class="lato-400 text-[#424551] text-sm">Password</p>
+                    <input type="text"
+                        class="border border-[#D7DADD] w-full !py-2 outline-none rounded-sm !pl-3 lato-400 text-[#424551] text-sm">
+                </div>
+            </div>
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                    <input type="checkbox" name="" id="" class="outline-none hover:bg-red-50">
+                    <p class="lato-400 text-[#424551] text-sm">Keep me signed in</p>
+                </div>
+                <a href="#" class="lato-400 text-[#FF3F3A] text-sm">Forgot password?</a>
+            </div>
+            <button class="btn transition">Sign in</button>
+            <p class="lato-400 text-[#424551] text-sm">
+                Don't have an account? <a href="#" class="text-[#FF3F3A]">Sign up</a>
+            </p>
+            <div class="border-t border-[#E5E8ED] !pt-7 ">
+                <p class="flex items-center flex-col text-center justify-center gap-5 lato-400 text-[#787A80] text-sm  ">
+                    Or sign in with:
+                <div class="flex gap-2 items-center justify-center !mt-5">
+                    <i class="fa-brands fa-facebook text-[#787A80] text-2xl hover:text-[#FF3F3A] transition"></i>
+                    <i class="fa-brands fa-twitter text-[#787A80] text-2xl hover:text-[#FF3F3A] transition"></i>
+                    <i class="fa-brands fa-linkedin-in text-[#787A80] text-2xl hover:text-[#FF3F3A] transition"></i>
+                </div>
+                </p>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="wrapper">
+        <div class="content">
+
+            <header class="!py-5 bg-[#FFE4DC]">
+                <nav class="container flex items-center justify-between max-[1125px]:flex-col max-[1125px]:gap-5">
+                    <div
+                        class="block1 flex items-center justify-between gap-16 max-[1125px]:flex-col max-[1125px]:gap-5">
+                        <a href="../index.html"><img src="../img/logo.png" alt=""></a>
+                        <ul class="nav-list none flex gap-10 max-[1125px]:gap-3">
+                            <li><a href="about.html"
+                                    class="text-[#424551] text-lg lato-700 hover:text-[#FF3F3A] transition-all">About
+                                    Us</a></li>
+                            <li><a href="courses.html"
+                                    class="text-[#424551] text-lg lato-700 hover:text-[#FF3F3A] transition-all">Courses</a>
+                            </li>
+                            <li><a href="events.html"
+                                    class="text-[#424551] text-lg lato-700 hover:text-[#FF3F3A] transition-all">Events</a>
+                            </li>
+                            <li><a href="blog.html"
+                                    class="text-[#424551] text-lg lato-700 hover:text-[#FF3F3A] transition-all">Blog</a>
+                            </li>
+                            <li><a href="contacts.html"
+                                    class="text-[#424551] text-lg lato-700 hover:text-[#FF3F3A] transition-all">Contacts</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="block2 flex none items-center justify-between gap-9 max-[1125px]:gap-3">
+                        <button class="btn rounded-[4px] transition-all">Get consultation</button>
+                        <div class="flex items-center justify-between gap-1.5">
+                            <i class="fa-solid fa-user text-[#424551] lato-700 text-lg"></i>
+                            <span
+                                class="cursor-pointer modal-l-btn text-[#424551] lato-700 text-lg hover:text-[#FF3F3A] transition-all">Login</span>
+                            <p>/</p>
+                            <span
+                                class="cursor-pointer modal-r-btn text-[#424551] lato-700 text-lg hover:text-[#FF3F3A] transition-all">Register</span>
+                        </div>
+                    </div>
+                    <button class="button btn btnn" id="myBtn"><i class="fa-solid fa-outdent"></i></button>
+                </nav>
+            </header>
+
+            <!-- menu -->
+            <div class="menu" id="myMenu">
+                <ul class="none flex gap-10">
+                    <li><a href="paper/about.html"
+                            class="text-black text-lg lato-700 hover:text-[#FF3F3A] transition-all">About
+                            Us</a></li>
+                    <li><a href="paper/courses.html"
+                            class="text-black text-lg lato-700 hover:text-[#FF3F3A] transition-all">Courses</a>
+                    </li>
+                    <li><a href="paper/events.html"
+                            class="text-black text-lg lato-700 hover:text-[#FF3F3A] transition-all">Events</a>
+                    </li>
+                    <li><a href="paper/blog.html"
+                            class="text-black text-lg lato-700 hover:text-[#FF3F3A] transition-all">Blog</a>
+                    </li>
+                    <li><a href="paper/contacts.html"
+                            class="text-black text-lg lato-700 hover:text-[#FF3F3A] transition-all">Contacts</a>
+                    </li>
+                </ul>
+                <div class="flex flex-col items-center justify-between gap-9">
+                    <button class="btn rounded-sm transition-all">Get consultation</button>
+                    <div class="flex items-center justify-between gap-1.5">
+                        <i class="fa-solid fa-user text-[#424551] lato-700 text-lg"></i>
+                        <span
+                            class="modal-l-btn text-[#424551] lato-700 text-lg hover:text-[#FF3F3A] transition-all">Login</span>
+                        <p class="text-[#424551] lato-700 text-lg">/</p>
+                        <span
+                            class="modal-r-btn text-[#424551] lato-700 text-lg hover:text-[#FF3F3A] transition-all">Register</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <main>
+                <section class="course bg-[#FFE4DC] !py-25 !pt-40 animation">
+                    <div class="container">
+                        <div class="text-center flex flex-col gap-5">
+                            <h2 class="uppercase lato-700 text-[#FF3F3A] text-lg">Online lecture</h2>
+                            <h1 class="lato-900 text-5xl text-[#1E212C]">Formation of the organizational structure
+                                of the <br> company in the face of uncertainty
+                            </h1>
+                        </div>
+                    </div>
+                </section>
+                <section class="will !py-25 animation">
+                    <div class="container flex items-center justify-between max-[1155px]:flex-col max-[1155px]:gap-10">
+                        <div class="flex flex-col gap-10" data-speed="1.2">
+                            <h1 class="lato-900 text-[#1E212C] text-5xl">We will talk about:</h1>
+                            <div class="flex flex-col gap-5">
+                                <div>
+                                    <div class="flex items-center gap-3">
+                                        <h1 class="lato-400 max-[620px]:text-sm text-[#FF3F3A] text-xl">- Theme 1.</h1>
+                                        <h2 class="lato-700 max-[620px]:text-sm text-[#1E212C] text-xl">Aliquet lectus
+                                            urna viverra in odio.</h2>
+                                    </div>
+                                    <p
+                                        class="!ml-4 w-[550px] max-[620px]:text-[10px] max-[580px]:w-full lato-400 text-[#424551] text-lg">
+                                        Nulla amet, sagittis potenti rhoncus sit. Elit lectus nec pulvinar aliquet donec
+                                        enim, ornare. Lacus facilisi curabitur turpis varius mauris. Nisi, tempus risus,
+                                        odio mi suscipit sed. Curabitur faucibus porttitor quis sem lacus, arcu feugiat
+                                        facilisis. Commodo nunc orci vitae accumsan id.</p>
+                                </div>
+                                <div class="flex items-center gap-">
+                                    <h1 class="lato-400 max-[620px]:text-sm text-[#FF3F3A] text-xl">+ Theme 2.</h1>
+                                    <h2 class="lato-700 max-[620px]:text-sm text-[#1E212C] text-xl">Orci commodo,
+                                        viverra orci mollis ut euismod.</h2>
+                                </div>
+                                <div class="flex items-center gap-">
+                                    <h1 class="lato-400 max-[620px]:text-sm text-[#FF3F3A] text-xl">+ Theme 3.</h1>
+                                    <h2 class="lato-700 max-[620px]:text-sm text-[#1E212C] text-xl">Sagittis vitae
+                                        facilisi rutrum amet mauris quisque vel.</h2>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <h1 class="lato-400 text-[#FF3F3A] max-[620px]:text-sm text-xl">+ Theme 4.</h1>
+                                    <h2 class="lato-700 text-[#1E212C] max-[620px]:text-sm text-xl">In id dolor quis
+                                        nunc, urna hendrerit pharetra.</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-[500px] max-[510px]:w-full border border-[#E5E8ED] shadowss !p-10 flex flex-col gap-8"
+                            data-lag="0.6">
+                            <div class="flex flex-col gap-2">
+                                <h2 class="lato-700 text-[#1E212C] text-sm">Time</h2>
+                                <h1 class="lato-700 text-[#FF3F3A] text-2xl">August 5, 11:00 – 14:00</h1>
+                                <p>Metus turpis sit lorem lacus, in elit tellus lacus.</p>
+                            </div>
+                            <div class="flex flex-col gap-2">
+                                <h2 class="lato-700 text-[#1E212C] text-sm">Price</h2>
+                                <h1 class="lato-700 text-[#FF3F3A] text-2xl">Free</h1>
+                                <p>Nulla sem adipiscing adipiscing felis fringilla. Adipiscing mauris quam ac elit
+                                    tristique dis.</p>
+                            </div>
+                            <a href="" class="lato-700 text-[#FF3F3A] text-2xl">Event on Facebook</a>
+                            <button class="btn transition">Join the event</button>
+                        </div>
+                    </div>
+                </section>
+                <section class="curator !py-25 animation">
+                    <div
+                        class="container grid grid-cols-2 place-items-center max-[1280px]:grid-cols-1 max-[1280px]:gap-10">
+                        <img src="../img/curator-image.png" alt="" data-speed="1.2">
+                        <div class="flex flex-col gap-4 max-[1280px]:items-center max-[1280px]:text-center"
+                            data-lag="0.6">
+                            <h2 class="uppercase lato-700 text-[#1E212C] text-lg">Speaker</h2>
+                            <h1 class="lato-900 text-[#1E212C] text-5xl">Kathryn Murphy</h1>
+                            <p class="lato-400 text-[#787A80] text-xl">Analyst and Marketing specialist in IT company
+                            </p>
+                            <p class="lato-400 text-[#424551] text-lg max-[1280px]:w-[500px] max-[600px]:w-full">Mattis
+                                adipiscing aliquam eu proin metus a iaculis faucibus. Tempus curabitur venenatis,
+                                vulputate venenatis fermentum ante. Nisl, amet id semper semper quis commodo, consequat.
+                                Massa rhoncus sit morbi odio. Sit maecenas nibh consectetur vel diam. Sem vulputate
+                                molestie laoreet at massa sed pharetra. Ac commodo platea id habitasse proin. Nullam sit
+                                nec ipsum posuere non. Nam vel aliquam tristique sollicitudin interdum quam. </p>
+                            <div class="flex items-center gap-10 max-[440px]:flex-col">
+                                <img src="../img/del.png" alt="">
+                                <img src="../img/sentinal.png" alt="">
+                                <img src="../img/national.png" alt="">
+                            </div>
+                            <div class="flex items-center gap-6 !mt-5">
+                                <a href="#"><i
+                                        class="lato-700 text-3xl text-[#787A80] hover:text-[#FF3F3A] transition-all fa-brands fa-facebook"></i></a>
+                                <a href="#"><i
+                                        class="lato-700 text-3xl text-[#787A80] hover:text-[#FF3F3A] transition-all fa-brands fa-twitter"></i></a>
+                                <a href="#"><i
+                                        class="lato-700 text-3xl text-[#787A80] hover:text-[#FF3F3A] transition-all fa-brands fa-instagram"></i></a>
+                                <a href="#"><i
+                                        class="lato-700 text-3xl text-[#787A80] hover:text-[#FF3F3A] transition-all fa-solid fa-info"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="subscribe !py-25  animation">
+                    <div
+                        class="container bg-[#FFE4DC] !py-13 rounded-sm !px-24 max-[425px]:!px-10 flex items-center justify-between max-[1085px]:flex-col max-[1024px]:w-full">
+                        <img src="../img/subscribe-img.png" alt="">
+                        <div class="flex flex-col gap-10">
+                            <h1 class="lato-900 text-3xl text-[#1E212C]">Don’t want to miss the best events? <br>
+                                Subscribe to our newsletter!</h1>
+                            <div class="flex gap-5 items-center max-[595px]:flex-col">
+                                <input type="text" placeholder="Your working email" name="" id=""
+                                    class="max-[420px]:w-full lato-400 text-lg text-[#9A9CA5] w-[400px] border border-[#D7DADD] bg-white !py-2 !pl-3 rounded-sm">
+                                <button class="btn">Subscribe</button>
+                            </div>
+                            <div>
+                                <input type="checkbox">
+                                <a href="#" class="lato-400 text-[#424551] text-lg">I agree to receive communications
+                                    from Createx Online School</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="request !py-25 animation">
+                    <div class="container flex  items-center justify-between max-[1300px]:flex-col max-[1300px]:gap-10">
+                        <div class="flex flex-col gap-10">
+                            <div class="flex flex-col gap-2 max-[1300px]:text-center">
+                                <h2 class="h2">Don’t miss the event</h2>
+                                <h1 class="h1">Leave a request</h1>
+                            </div>
+                            <div class="flex flex-col gap-5">
+                                <div class="flex flex-col gap-2">
+                                    <h2 class="lato-400 text-[#424551] text-lg">Full Name</h2>
+                                    <input type="text" placeholder="Your full name"
+                                        class="!pl-4 rounded-sm !py-3 border border-[#D7DADD]">
+                                </div>
+                                <div class="flex flex-col gap-2">
+                                    <h2 class="lato-400 text-[#424551] text-lg">Email</h2>
+                                    <input type="email" placeholder="Your working email"
+                                        class="!pl-4 rounded-sm !py-3 border border-[#D7DADD]">
+                                </div>
+                                <div class="flex flex-col gap-2">
+                                    <h2 class="lato-400 text-[#424551] text-lg">Phone</h2>
+                                    <input type="tel" placeholder="Your phone number"
+                                        class="!pl-4 rounded-sm !py-3 border border-[#D7DADD]">
+                                </div>
+                            </div>
+                            <button class="btn">Join the event</button>
+                            <a href="#" class="lato-400 text-[#424551] text-lg max-[1300px]:text-center">* You will
+                                receive a link to the online lecture in an email after registration.</a>
+                        </div>
+                        <img src="../img/request-img.png" alt="">
+                    </div>
+                </section>
+                <section class="check !py-25 animation">
+                    <div class="container flex flex-col gap-10">
+                        <div
+                            class="flex items-end justify-between max-[1240px]:flex-col max-[1240px]:text-center max-[1240px]:items-center">
+                            <div class="flex flex-col gap-2">
+                                <h2 class="uppercase lato-700 text-[#1E212C] text-lg">Check other courses</h2>
+                                <h1 class="lato-900 text-[#1E212C] text-5xl">You may also like</h1>
+                            </div>
+                            <div class="flex gap-5 items-center">
+                                <a href="#"><i class="fa-solid fa-arrow-left lato-700 text-[#424551]"></i></a>
+                                <a href="#"><i class="fa-solid fa-arrow-right lato-700 text-[#424551]"></i></a>
+                            </div>
+                        </div>
+                        <div class=" grid grid-cols-3 max-[740px]:grid-cols-1 ">
+                            <div class="block23">
+                                <div class="flex flex-col gap-3">
+                                    <h1 class="lato-700 text-[#FF3F3A] text-3xl">05 Aug </h1>
+                                    <h6 class="lato-400 text-[#787A80] text-lg">11:00 – 14:00</h6>
+                                    <h2 class="lato-700 text-[#1E212C] text-xl">Formation of the organizational
+                                        structure of the company in the face of uncertainty.</h2>
+                                    <p class="lato-400 text-[#787A80] text-lg">Onine master-class</p>
+                                    <a href="lecture.html" class="btn transition flex items-center justify-center">View
+                                        more</a>
+                                </div>
+                            </div>
+                            <div class="block23">
+                                <div class="flex flex-col gap-3">
+                                    <h1 class="lato-700 text-[#FF3F3A] text-3xl">10 Jul </h1>
+                                    <h6 class="lato-400 text-[#787A80] text-lg">9:00 – 14:00</h6>
+                                    <h2 class="lato-700 text-[#1E212C] text-xl">Find and evaluate: search and
+                                        assessment tools for candidates.</h2>
+                                    <p class="lato-400 text-[#787A80] text-lg">Onine workshop</p>
+                                    <a href="lecture.html" class="btn transition flex items-center justify-center">View
+                                        more</a>
+                                </div>
+                            </div>
+                            <div class="block23">
+                                <div class="flex flex-col gap-3">
+                                    <h1 class="lato-700 text-[#FF3F3A] text-3xl">02 Jul </h1>
+                                    <h6 class="lato-400 text-[#787A80] text-lg">11:00 – 13:00</h6>
+                                    <h2 class="lato-700 text-[#1E212C] text-xl">How to brief a client and present
+                                        your design to approve it from the first show.</h2>
+                                    <p class="lato-400 text-[#787A80] text-lg">Onine lecture</p>
+                                    <a href="lecture.html" class="btn transition flex items-center justify-center">View
+                                        more</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-center gap-5 max-[625px]:flex-col">
+                            <h2 class="lato-700 text-[#1E212C] text-3xl">Do you want more courses?</h2>
+                            <button class="btn transition-all">View all courses</button>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+             <!-- FOOTER -->
+            <footer>
+                <section class="part1 !py-25 bg-[#1E212C]">
+                    <div
+                        class="container flex justify-between items-start gap-5 max-[1175px]:flex-col max-[1175px]:items-center max-[1175px]:text-center max-[1175px]:justify-center">
+                        <div class="flex flex-col gap-10 items-start max-[1175px]:items-center">
+                            <a href="../index.html">
+                                <img src="../img/logo-2.png" alt="">
+                            </a>
+                            <p class="w-[350px] lato-400 text-[#B1B5C3] text-sm max-[375px]:w-full">Createx Online
+                                School is a leader in online
+                                studying. We have lots of courses and programs from the main market experts. We provide
+                                relevant
+                                approaches to online learning, internships and employment in the largest companies
+                                in the
+                                country. </p>
+                            <div class="flex gap-5 items-center">
+                                <a href="#"><i
+                                        class="lato-700 text-2xl text-[#B1B5C3] hover:text-white transition-all fa-brands fa-facebook"></i></a>
+                                <a href="#"><i
+                                        class="lato-700 text-2xl text-[#B1B5C3] hover:text-white transition-all fa-brands fa-twitter"></i></a>
+                                <a href="#"><i
+                                        class="lato-700 text-2xl text-[#B1B5C3] hover:text-white transition-all fa-brands fa-youtube"></i></a>
+                                <a href="#"><i
+                                        class="lato-700 text-2xl text-[#B1B5C3] hover:text-white transition-all fa-brands fa-telegram"></i></a>
+                                <a href="#"><i
+                                        class="lato-700 text-2xl text-[#B1B5C3] hover:text-white transition-all fa-brands fa-instagram"></i></a>
+                                <a href="#"><i
+                                        class="lato-700 text-2xl text-[#B1B5C3] hover:text-white transition-all fa-solid fa-info"></i></a>
+                            </div>
+                        </div>
+                        <div class=" flex flex-col gap-3">
+                            <h1 class="lato-700 text-lg text-white">SITE MAP</h1>
+                            <ul class="footer-list flex flex-col gap-3">
+                                <li><a href="about.html" class="lato-400 text-[#B1B5C3] text-sm">About Us</a></li>
+                                <li><a href="courses.html" class="lato-400 text-[#B1B5C3] text-sm">Courses</a>
+                                </li>
+                                <li><a href="events.html" class="lato-400 text-[#B1B5C3] text-sm">Events</a></li>
+                                <li><a href="blog.html" class="lato-400 text-[#B1B5C3] text-sm">Blog</a></li>
+                                <li><a href="contacts.html" class="lato-400 text-[#B1B5C3] text-sm">Contacts</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="flex flex-col gap-3">
+                            <h1 class="lato-700 text-lg flex flex-col gap-3 text-white">COURSES</h1>
+                            <ul class="footer-list">
+                                <li><a href="#" class="lato-400 text-[#B1B5C3] text-sm">Marketing</a></li>
+                                <li><a href="#" class="lato-400 text-[#B1B5C3] text-sm">Management</a></li>
+                                <li><a href="#" class="lato-400 text-[#B1B5C3] text-sm">HR & Recruting</a></li>
+                                <li><a href="#" class="lato-400 text-[#B1B5C3] text-sm">Design</a></li>
+                                <li><a href="#" class="lato-400 text-[#B1B5C3] text-sm">Development</a></li>
+                            </ul>
+                        </div>
+                        <div class="flex flex-col gap-3">
+                            <h1 class="lato-700 text-lg flex flex-col gap-3 text-white">CONTACT US</h1>
+                            <ul class="footer-list">
+                                <li><a href="#" class="lato-400 text-[#B1B5C3] text-sm"><i
+                                            class="fa-solid fa-mobile"></i>(405)
+                                        555-0128</a></li>
+                                <li><a href="#" class="lato-400 text-[#B1B5C3] text-sm"><i
+                                            class="fa-solid fa-envelope"></i>hello@createx.com</a></li>
+                            </ul>
+                        </div>
+                        <div class="flex flex-col gap-3">
+                            <h1 class="lato-700 text-lg text-white uppercase">SIGN UP TO OUR NEWSLETTER</h1>
+                            <div class="relative">
+                                <input type="email" placeholder="Email address"
+                                    class=" outline-none !pl-5 !p-2 w-[250px] bg-[#43454b] border border-[#777981] text-[#777981] text-sm lato-400 rounded-sm">
+                                <i
+                                    class="fa-solid fa-arrow-right absolute top-[12px] right-[160px] text-white cursor-pointer text-sm lato-400"></i>
+                            </div>
+                            <p class="lato-400 text-sm text-white">*Subscribe to our newsletter to receive
+                                communications and
+                                early <br> updates from Createx SEO Agency.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+                <section class="part2 !py-5 bg-[#2c3041]">
+                    <div class="container flex justify-between max-[425px]:flex-col max-[425px]:text-center">
+                        <h1 class=" lato-400 text-sm text-white">© All rights reserved.Made with<i
+                                class="fa-regular fa-heart text-[#FF3F3A] lato-400 text-sm"></i>by Createx Studio </h1>
+                        <a href="#" class="lato-700 text-[#B1B5C3] text-sm">GO TO TOP</a>
+                    </div>
+                </section>
+            </footer>
+
+        </div>
+    </div>
+
+
+    <script src="//cdn.datatables.net/2.3.2/js/dataTables.min.js"></script>
+
+    <script src="../js/swiper-bundle.js"></script>
+
+    <script src="../node_modules/gsap/dist/ScrollSmoother.min.js"></script>
+    <script src="../node_modules/gsap/dist/ScrollTrigger.min.js"></script>
+    <script src="../tailwind.config.js"></script>
+    <script src="../node_modules/gsap/dist/gsap.min.js"></script>
+
+
+    <script src="../js/swiper.js"></script>
+    <script src="../js/app.js"></script>
+    <script src="../js/modalL.js"></script>
+    <script src="../js/myModalR.js"></script>
+
+    <script src="https://kit.fontawesome.com/134acfe2be.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
